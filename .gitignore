@@ -1,14 +1,12 @@
 /cache
 /characters
 /css
-/extensions
 /grammars
 /installer_files
 /logs
 /loras
 /models
 /presets
-/prompts
 /repositories
 /softprompts
 /torch-dumps
