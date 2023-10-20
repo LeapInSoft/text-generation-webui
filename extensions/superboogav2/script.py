@@ -167,7 +167,9 @@ def custom_generate_chat_prompt(user_input, state, **kwargs):
     return custom_generate_chat_prompt_internal(user_input, state, collector, **kwargs)
 
 
-def input_modifier(string):
+def input_modifier(string, is_chat=False):
+    if is_chat:
+        return string
     return input_modifier_internal(string, collector)
 
 

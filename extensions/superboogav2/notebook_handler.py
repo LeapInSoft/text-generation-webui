@@ -17,10 +17,6 @@ def _remove_special_tokens(string):
 
 
 def input_modifier_internal(string, collector):
-    # Sanity check.
-    if shared.is_chat():
-        return string
-
     # Find the user input
     pattern = re.compile(r"<\|begin-user-input\|>(.*?)<\|end-user-input\|>", re.DOTALL)
     match = re.search(pattern, string)

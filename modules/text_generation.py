@@ -141,8 +141,10 @@ def encode(prompt, add_special_tokens=True, add_bos_token=True, truncation_lengt
 def decode(output_ids, skip_special_tokens=True):
     if shared.tokenizer is None:
         raise ValueError('No tokenizer is loaded')
-
-    return shared.tokenizer.decode(output_ids, skip_special_tokens)
+    try:
+        return shared.tokenizer.decode(output_ids, skip_special_tokens)
+    except:
+        return shared.tokenizer.decode(output_ids)
 
 
 def get_encoded_length(prompt):
